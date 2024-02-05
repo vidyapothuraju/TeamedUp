@@ -1,0 +1,149 @@
+
+
+'''class ProfileForm(forms.ModelForm):
+    # class="form-control ps-5"
+    # widget=forms.RadioSelect
+    # class="form-check"
+    year = datetime.now()
+    birth_date = forms.DateField(
+        widget=forms.SelectDateWidget(years=range(int(str(year)[0:4]) - 12, 1970, -1), attrs={}))
+    phone_num = forms.CharField(max_length=12, widget=forms.TextInput(attrs={'class': 'form-control ps-5'}))
+    country = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control ps-5'}))
+    # whats_app = forms.ChoiceField(widget=forms.CheckboxInput(attrs={'class':'form-check'}))
+    insta = forms.URLField(widget=forms.TextInput(attrs={'class': 'form-control ps-5'}))
+    telega = forms.URLField(widget=forms.TextInput(attrs={'class': 'form-control ps-5'}), label='Telegram')
+    eng_skill = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control ps-5'}),
+                                help_text='Please, choose from 1 to 10')
+    languages = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control ps-5'}),
+                                help_text='Please, enter language which you speak'
+                                          '<br> Exemple: English, Russian, German')
+    sport = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control ps-5'}))
+    position = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control ps-5'}))
+    Sport_org_name = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control ps-5'}),
+                                     label='Name of sports organization')
+    Sport_org_link = forms.URLField(widget=forms.TextInput(attrs={'class': 'form-control ps-5'}),
+                                    label='Link of sports organization')
+    highlights_link = forms.URLField(widget=forms.TextInput(attrs={'class': 'form-control ps-5'}))
+    # highlights_link2= forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control ps-5'}))
+    hand = forms.ChoiceField(widget=forms.RadioSelect(), choices=CHOICES)
+    height_inch_and_cm = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control ps-5'}),
+                                         help_text='Exemple: 78.7 inch, 200 cm')
+    weight_pound_and_kg = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control ps-5'}),
+                                          help_text='Exemple: 198 pound, 90 kg')
+
+    # user_flag = forms.BooleanField(label='Agree whith our rule')
+
+    class Meta:
+        model = Profile
+        fields = (  # 'avatar',
+            'birth_date',
+            'phone_num',
+            'country',
+            'whats_app',
+            'insta',
+            'telega',
+            'eng_skill',
+            'languages',
+            'sport',
+            'position',
+            'Sport_org_name',
+            'Sport_org_link',
+            'pay_or_not',
+            'highlights_link',
+            # 'highlights_link2',
+            'hand',
+            # 'user_flag',
+        )
+'''
+
+'''Univer = [
+        {'png_link': '/static/main_files/campus.jpg',
+         'name': 'ABC',
+         'disc': 'qwertyuiop',
+         'count_clubs': '2',
+         'count_position': '123',
+         'un_link': 'https://www.ox.ac.uk/'},
+        {'png_link': '/static/main_files/campus.jpg',
+         'name': 'ABC',
+         'disc': 'qwertyuiop',
+         'count_clubs': '2',
+         'count_position': '123',
+         'un_link': 'https://www.ox.ac.uk/'},
+        {'png_link': '/static/main_files/campus.jpg',
+         'name': 'ABC',
+         'disc': 'qwertyuiop',
+         'count_clubs': '2',
+         'count_position': '123',
+         'un_link': 'https://www.ox.ac.uk/'},
+        {'png_link': '/static/main_files/campus.jpg',
+         'name': 'ABC',
+         'disc': 'qwertyuiop',
+         'count_clubs': '2',
+         'count_position': '123',
+         'un_link': 'https://www.ox.ac.uk/'},
+
+    ]'''
+
+   '''{
+            # tweeter
+            'link': '',
+            'class': "feather feather-twitter fea icon-sm fea-social",
+            'path': "M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z",
+            'x': '-1000',
+            'y': '-1000',
+            'width': '-1000',
+            'height': '-1000',
+            'rx': '-1000',
+            'ry': '-1000',
+            'x1': '-1000',
+            'y1': '-1000',
+            'x2': '-1000',
+            'y2': '-1000',
+           # 'cx': '-1000',
+          #  'cy': '-1000',
+          #  'r': '-1000',
+        },
+        {
+            # in
+            'link': '',
+            'class': "feather feather-linkedin fea icon-sm fea-social",
+            'path': "M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z",
+            'x': '2',
+            'y': '9',
+            'width': '4',
+            'height': '12',
+            'rx': '-1000',
+            'ry': '-1000',
+            'x1': '-1000',
+            'y1': '-1000',
+            'x2': '-1000',
+            'y2': '-1000',
+            'cx': '4',
+            'cy': '4',
+            'r': '2',
+        }'''
+
+'''@login_required
+@transaction.atomic
+def update_profile(request):
+    data = {}
+    if request.method == 'POST':
+        #user_form = UserForm(request.POST, instance=request.user)
+        profile_form = ProfileForm(request.POST, instance=request.user.profile)
+        if profile_form.is_valid():#user_form.is_valid() and
+            #user_form.save()
+            profile_form.save()
+            messages.success(request, ('Ваш профиль был успешно обновлен!'))
+            return redirect('profile')
+        else:
+            data['error'] = "Логин или пароль неправильные "+str(profile_form)
+    else:
+        user_form = UserForm(instance=request.user)
+        profile_form = ProfileForm(instance=request.user.profile)
+
+    data['menu'] = menu()
+    data['web'] = web()
+    data['company'] = company()
+    data['usfull_links'] = usfull_links()
+    data['profile_form']=profile_form
+    return render(request, 'accounts/prof_set.html', data)'''

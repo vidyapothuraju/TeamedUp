@@ -1,0 +1,57 @@
+
+
+
+
+
+h1.title { line-height: 1.5;font-weight: 600;letter-spacing: 1px;font-size:1.6rem !important }
+h4.title { letter-spacing: 0.5px;font-size: 30px !important;line-height: 1.5;font-weight: 600; }
+h2.title { font-size:1.2rem !important; }
+
+
+
+.color-white { color:#fff; }
+
+.fs-12 { font-size:12px; }
+
+.btn.nobtn { border:none !important;box-shadow: none!important; color:#333;}
+.btn-reset { display:inline-block;padding:0;margin:0; }
+
+
+
+.top-logo { width:120px; padding-top:5px;}
+
+#topnav .navigation-menu > li > a { padding-left:7px;padding-right:7px; }
+@media (min-width: 992px) {
+	#topnav .navigation-menu > li > a {padding-top: 30px;padding-bottom: 30px;min-height: 62px;}
+}
+
+
+.bg-half { padding: 100px 0 0px; }
+
+
+.page-next-level .page-next {
+	position: relative;
+	top: 15px;}
+
+.job-box .job-overlay {	opacity: 0.8;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
